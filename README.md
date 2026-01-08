@@ -26,6 +26,11 @@ Zyphra-Guard achieves very high accuracy in detecting known web-based attacks on
    - Enable "Developer mode".
    - Click "Load unpacked" and select the `extension/` folder.
 
+ ## Security Note 
+This project is a research prototype for educational purposes.  
+Always use official security tools for production environments.  
+For best performance, use over HTTPS.
+
 ##  Project Team
 Amal Alidmat, Aya Hamdi, Heba AlHusban, Shaimaa Almashaqbeh.
 **Supervised by:** Dr. Mohammad Alshinwan.
