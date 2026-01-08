@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zyphra</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body id="card" class="card active">
+<div class="bg-orb orb-purple"></div>
+<div class="bg-orb orb-cyan"></div>
+<div class="bg-orb orb-green"></div>
+    <!-- TOP WAVES -->
+    <svg class="edge-waves edge-top" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="gradWave" x1="0%" x2="100%">
+                <stop offset="0%" stop-color="#9D4DFF"/>
+                <stop offset="100%" stop-color="#00D6FF"/>
+            </linearGradient>
+        </defs>
+
+        <!-- 10 Waves -->
+        <path id="wave1"></path>
+        <path id="wave2"></path>
+        <path id="wave3"></path>
+        <path id="wave4"></path>
+        <path id="wave5"></path>
+        <path id="wave6"></path>
+        <path id="wave7"></path>
+        <path id="wave8"></path>
+        <path id="wave9"></path>
+        <path id="wave10"></path>
+    </svg>
+
+    <!-- BOTTOM WAVES -->
+    <svg class="edge-waves edge-bottom" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <use href="#wave1"/>
+        <use href="#wave2"/>
+        <use href="#wave3"/>
+        <use href="#wave4"/>
+        <use href="#wave5"/>
+        <use href="#wave6"/>
+        <use href="#wave7"/>
+        <use href="#wave8"/>
+        <use href="#wave9"/>
+        <use href="#wave10"/>
+    </svg>
+
+  <div class="brand-container">
+    <div class="title">Zyphra</div>
+    <div class="subtitle">Hybrid ML & Rule-based Web Attack Detection</div>
+</div>
+
+    <div id="status" class="status"> Secure • No threats detected</div>
+
+    <div class="toggle-container">
+        <div id="toggle" class="toggle active"></div>
+    </div>
+    <div id="result" class="result secure">
+</div>
+  <div id="resultTitle"></div>
+  <div id="resultDetails"></div>
+  <div id="resultTime"></div>
+</div>
+<div class="action-area" style="margin-top: 20px;">
+    <button id="scan" class="btn">
+        <span class="btn-text">Scan Page</span>
+    </button>
+    <button id="openSafety" class="btn">
+        <span class="btn-text">Safety Center</span>
+    </button>
+</div>
+
+<script src="popup.js"></script>
+<script src="navigation.js"></script>
+</body>
+</html>
