@@ -12,7 +12,6 @@ Zyphra-Guard is an advanced security system designed to protect users from web-b
 ##  Performance Results
 Based on our system evaluation using the CICIDS-2018 dataset, Zyphra-Guard achieved exceptional results [10, 11]:
 - **Detection Accuracy:** **100%** precision and recall using the XGBoost model for known threats [12, 13].
-- **Anomaly Detection:** **97.53%** accuracy using an Autoencoder for zero-day/unknown threats [14].
 - **Latency:** Total processing delay of only **35ms** (12ms for extraction + 23ms for inference), ensuring a seamless browsing experience [15].
 
 ##  Tech Stack
