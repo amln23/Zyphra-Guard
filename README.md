@@ -3,23 +3,6 @@
 
 Zyphra-Guard is an advanced security system designed to protect users from web-based attacks in real-time. It operates as a Chrome Extension (Frontend) integrated with a Flask-based Inference Server (Backend).
 
-
-## Requirements & Running the Server
-
-### 1. Install the Required Packages
-Ensure you have Python 3.8+ installed, then run:
-pip install -r requirements.txt
-> This installs Flask, Scikit-learn, XGBoost, TensorFlow/Keras, and other necessary libraries.
-
-### 2. Frontend Setup
-1. Open Chrome and go to `chrome://extensions/`
-2. Enable **Developer Mode**
-3. Click **Load unpacked** and select the `extension/` folder
-
-### 3. Start the Backend Server
-Run:python server2.py
-> The server will start at [http://localhost:5000](http://localhost:5000). Keep this terminal open while using the Chrome Extension frontend.
-
 ## Key Features
 - **Hybrid Detection:** Combines lightweight heuristic rules for speed and Machine Learning (XGBoost) for high-accuracy detection of complex patterns.
 - **Real-Time Monitoring:** Continuous scanning of URLs, DOM mutations, and User Inputs.
