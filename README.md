@@ -17,6 +17,7 @@ Ensure you have Python 3.8+ installed, then run: pip install -r requirements.txt
 
 ### 3. Start the Backend Server
 Run:python server2.py
+
 The server will start at [http://localhost:5000](http://localhost:5000). Keep this terminal open while using the Chrome Extension frontend.
 
 ## Key Features
