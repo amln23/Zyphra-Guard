@@ -1,4 +1,4 @@
-# Zyphra-Guard (ZGS) 
+# Zyphra-Guard
 ### A Hybrid Machine Learning & Heuristic-Based Framework for Real-Time Web Attack Detection
 
 Zyphra-Guard is an advanced security system designed to protect users from web-based attacks in real-time. It operates as a Chrome Extension (Frontend) integrated with a Flask-based Inference Server (Backend).
