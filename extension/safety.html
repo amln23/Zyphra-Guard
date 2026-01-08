@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zyphra • Cyber Safety Center</title>
+
+<!-- Styles -->
+<link rel="stylesheet" href="safety.css">
+</head>
+
+<body>
+
+<!-- BACKGROUND ORBS -->
+<div class="bg-orb orb-purple"></div>
+<div class="bg-orb orb-cyan"></div>
+<div class="bg-orb orb-green"></div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="brand">
+    <div class="brand-row">
+      <img src="icons/icon128.png" class="brand-logo">
+      <div class="brand-text">
+        <h1 id="Zyphra">Zyphra</h1>
+        <div class="subtitle">Hybrid ML & Rule-based Web Attack Detection</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-pill" id="statusPill">
+    <span class="dot" id="statusDot"></span>
+    <span id="statusText">Prototype Mode • Partial Coverage</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-col">
+    <div class="card">
+      <h3>SYSTEM STATS</h3>
+      <div class="small-note">
+        These reflect current project scope (URL-focused) and planned expansion.
+      </div>
+
+      <div class="stat">
+        <div class="k">Coverage Scope</div>
+        <div class="v" id="coverage">GET Requests (Current)</div>
+        <div class="tag">POST/Body Analysis</div>
+      </div>
+
+      <div class="stat">
+        <div class="k">Protection Mode</div>
+        <div class="v" id="mode">URL & Partial DOM</div>
+        <div class="tag">Full DOM Instrumentation</div>
+      </div>
+
+      <div class="stat">
+        <div class="k">Detection Engine</div>
+        <div class="v" id="engine">Heuristic + ML (Hybrid)</div>
+        <div class="tag">CVSS Severity Mapping</div>
+      </div>
+
+      <div class="stat">
+        <div class="k">Privacy Model</div>
+        <div class="v" id="privacy">Local-First</div>
+        <div class="tag">Minimal Telemetry</div>
+      </div>
+
+      <div class="stat">
+        <div class="k">Threats Detected (Live)</div>
+        <div class="v" id="blocked">0</div>
+        <div class="tag">Real-time Counter</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-col">
+
+    <!-- CHART + VIEW MODE -->
+    <div class="card">
+      <div class="chart-top">
+        <div>
+          <h3>RISK OVER TIME</h3>
+          <div class="small-note" id="chartCaption">
+            Live risk timeline (last 30 minutes, 5-minute buckets).
+          </div>
+        </div>
+        <div class="legend">
+          <span><i class="key safe"></i> Normal</span>
+          <span><i class="key attack"></i> Attack</span>
+        </div>
+      </div>
+
+      <canvas id="riskChart" width="980" height="260"></canvas>
+
+      <div class="view-mode">
+        <h3>DATA VIEW MODE</h3>
+        <div class="small-note">
+          Unified real-time view of all detected threats.
+        </div>
+
+        <div class="demo-buttons">
+          <button id="btnUrl">▶ Live Security Overview</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPLAINABILITY  -->
+    <div class="card explain-card">
+      <h3>EXPLAINABILITY</h3>
+      <div class="small-note">
+        Current explanations reflect live indicators, while future panels show planned upgrades.
+      </div>
+
+      <div class="explain-grid">
+        <div class="panel">
+          <h4>Current (URL / Heuristic / Partial DOM)</h4>
+          <div class="chips" id="chipsCurrent"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- ATTACK KNOWLEDGE BASE -->
+<div class="card" style="margin:0 48px 22px; position:relative; z-index:2;">
+  <h3>ATTACK KNOWLEDGE BASE</h3>
+  <div class="small-note">
+   A complete view of all attacks our extension is capable of detecting.
+  </div>
+
+ <!-- CRITICAL -->
+  <div class="attack-group">
+        <div class="attack-grid">
+      <button class="attack-pill critical" data-attack="SQL Injection">SQL Injection<span class="live-dot hidden"></span></button>
+      <button class="attack-pill critical" data-attack="XSS">XSS<span class="live-dot hidden"></span></button>
+      <button class="attack-pill critical" data-attack="Command Injection">Command Injection<span class="live-dot hidden"></span></button>
+      <button class="attack-pill critical" data-attack="RCE">Remote Code Execution<span class="live-dot hidden"></span></button>
+      <button class="attack-pill critical" data-attack="SSRF">SSRF<span class="live-dot hidden"></span></button>
+
+     <button class="attack-pill critical" data-attack="DDoS">DDoS Attack<span class="live-dot hidden"></span></button>
+ </div>
+  </div>
+
+  <!-- HIGH -->
+  <div class="attack-group">
+    <div class="attack-grid">
+      <button class="attack-pill high" data-attack="LFI">LFI<span class="live-dot hidden"></span></button>
+      <button class="attack-pill high" data-attack="RFI">RFI<span class="live-dot hidden"></span></button>
+      <button class="attack-pill high" data-attack="SSTI">Template Injection<span class="live-dot hidden"></span></button>
+      <button class="attack-pill high" data-attack="XXE">XXE<span class="live-dot hidden"></span></button>
+
+      <button class="attack-pill high" data-attack="FTP Brute Force">FTP Brute Force<span class="live-dot hidden"></span></button>
+      <button class="attack-pill high" data-attack="SSH Brute Force">SSH Brute Force<span class="live-dot hidden"></span></button>
+
+    </div>
+  </div>
+
+  <!-- MEDIUM -->
+  <div class="attack-group">
+    <div class="attack-grid">
+      <button class="attack-pill medium" data-attack="Path Traversal">Path Traversal<span class="live-dot hidden"></span></button>
+      <button class="attack-pill medium" data-attack="CSRF">CSRF<span class="live-dot hidden"></span></button>
+      <button class="attack-pill medium" data-attack="NoSQL Injection">NoSQL Injection<span class="live-dot hidden"></span></button>
+      <button class="attack-pill medium" data-attack="JWT Tampering">JWT Tampering<span class="live-dot hidden"></span></button>
+      <button class="attack-pill medium" data-attack="Serialization">Insecure Deserialization<span class="live-dot hidden"></span></button>
+
+      <button class="attack-pill medium" data-attack="DoS">DoS Attack<span class="live-dot hidden"></span></button>
+    </div>
+  </div>
+
+  <!-- LOW -->
+  <div class="attack-group">
+    <div class="attack-grid">
+      <button class="attack-pill low" data-attack="API Abuse">API Abuse<span class="live-dot hidden"></span></button>
+      <button class="attack-pill low" data-attack="WebSocket Injection">WebSocket Injection<span class="live-dot hidden"></span></button>
+      <button class="attack-pill low" data-attack="JS Exploitation">JavaScript Exploitation<span class="live-dot hidden"></span></button>
+      <button class="attack-pill low" data-attack="GraphQL Injection">GraphQL Injection<span class="live-dot hidden"></span></button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="card" style="margin:0 48px 22px; position:relative; z-index:2;">
+  <h3>RECENT SECURITY EVENTS</h3>
+  <div class="small-note">
+    Real-time detected threats (most recent first).
+  </div>
+
+  <div id="detections-container" class="detections-list">
+    <!-- injected by safety.js -->
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="warn">
+    <b>Security Note:</b> For secure operation, the system should be used over <b>HTTPS</b>.
+  </div>
+</div>
+
+<!-- ================= ATTACK INFO PANEL ================= -->
+<div id="attackInfoPanel" class="attack-info panel-hidden">
+  <div class="attack-info-header">
+    <h2 id="attackInfoTitle">Attack</h2>
+    <button id="closeAttackInfo">✕</button>
+  </div>
+
+  <div class="attack-info-body" id="attackInfoContent">
+    <!-- injected by JS -->
+  </div>
+</div>
+
+
+<!-- Script -->
+<script src="safety.js"></script>
+<div id="attackOverlay" class="attack-overlay hidden"></div>
+
+<script src="zgs-engine.js"></script>
+<script src="safety.js"></script>
+    
+</body>
+</html>
+</body>
+</html>
